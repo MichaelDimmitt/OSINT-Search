@@ -3,14 +3,13 @@ import webbrowser
 toolSelector = {
     "1": "Whitepage",
     "2": "DNS Lookup",
-    "3": "WHOIS",
-    "4": "Google Search",
-    "5": "LinkedIn Search",
-    "6": "Email Search",
-    "7": "Phone Number Search",
-    "8": "Address Search",
-    "9": "IP Address Search",
-    "10": "Social Media Search",
+    "3": "Google Search",
+    "4": "LinkedIn Search",
+    "5": "Email Search",
+    "6": "Phone Number Search",
+    "7": "Address Search",
+    "8": "IP Address Search",
+    "9": "Social Media Search",
       
 }
 
@@ -35,7 +34,6 @@ if choice == "1":
         name = input("Enter a name to search: ")
         print(f"Searching for {name} in Whitepages...")
         # Implement Whitepages search functionality here
-        #https://www.whitepages.com/name/{name}
         webbrowser.open(f"https://www.whitepages.com/name/{name.replace(' ', '%20')}")
 
 
@@ -53,28 +51,31 @@ elif choice == "2":
     # Implement DNS Lookup functionality here
     domain_name = input("Enter a domain name to look up: ")
     print(f"Looking up DNS records for {domain_name}...")
+    webbrowser.open(f"https://www.whois.com/whois/{domain_name}")
 elif choice == "3":
-    print("Running WHOIS tool...")
+    print("Running Google Search...")
     # Implement WHOIS functionality here
+    first_name = input("Enter a first name: ")
+    last_name = input("Enter last name: ")
+    birthdate = input("Enter a birthday if known: ")
+    if birthdate:
+        webbrowser.open(f"https://www.google.com/search?q={first_name}+{last_name}") 
+    elif birthdate is True:
+        webbrowser.open(f"https://www.google.com/search?q={first_name}+{last_name}+%3A+{birthdate}")
+  
 elif choice == "4":
-    print("Running Google Search tool...")
-    # Implement Google Search functionality here
+    print("Running Linkedin Search")
+    # Implement Linkedin Search functionality here
 elif choice == "5":
-    print("Running LinkedIn Search tool...")
-    # Implement LinkedIn Search functionality here
-elif choice == "6":
-    print("Running Email Search tool...")
-    # Implement Email Search functionality here
-elif choice == "7":
     print("Running Phone Number Search tool...")
     # Implement Phone Number Search functionality here
-elif choice == "8":
+elif choice == "6":
     print("Running Address Search tool...")
     # Implement Address Search functionality here
-elif choice == "9":
+elif choice == "7":
     print("Running IP Address Search tool...")
     # Implement IP Address Search functionality here
-elif choice == "10":
+elif choice == "8":
     print("Running Social Media Search tool...")
     # Implement Social Media Search functionality here
 
